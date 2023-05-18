@@ -19,6 +19,7 @@ en tu computadora.
 `WWWUSER=1000
 WWWGROUP=1000`
 Y modificar la que dice `DB_HOST=127.0.0.1` a `DB_HOST=mysql`
+En caso de usar windows, en el archivo docker_compose.yml modificar la línea 20 para que quede así: `IGNITION_LOCAL_SITES_PATH: './vendor/laravel/sail/runtimes/8.2'`
 3) En la terminal, pararse en la carpeta del proyecto y ejecutar `composer install`, luego `docker-compose up` (la primera vez tarda), este útlimo comando se ejecuta cada vez que querramos prender el contenedor.
 4) Luego entramos al contenedor y ejecutamos `php artisan key:generate` para generar una clave.
 5) Para ver la base de datos nos conectamos con las credenciales puestas anteriormente desde MySQLWorkbench. 
