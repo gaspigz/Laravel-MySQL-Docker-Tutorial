@@ -24,3 +24,9 @@ En caso de usar windows, en el archivo docker_compose.yml modificar la línea 20
 4) Luego entramos al contenedor y ejecutamos `php artisan key:generate` para generar una clave.
 5) Para ver la base de datos nos conectamos con las credenciales puestas anteriormente desde MySQLWorkbench. 
 6) 4) Luego entramos al contenedor y ejecutamos `php artisan migrate` para generar una clave.
+
+## Crear una migración:
+En el contenedor ejecutar:
+`php artisan make:migration nombre`
+Luego:
+`php artisan migrate`
