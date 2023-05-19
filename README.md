@@ -23,7 +23,7 @@ En caso de usar windows, en el archivo docker_compose.yml modificar la línea 20
 3) En la terminal, pararse en la carpeta del proyecto y ejecutar `composer install`, luego `docker-compose up` (la primera vez tarda), este útlimo comando se ejecuta cada vez que querramos prender el contenedor.
 4) Luego entramos al contenedor y ejecutamos `php artisan key:generate` para generar una clave.
 5) Para ver la base de datos nos conectamos con las credenciales puestas anteriormente desde MySQLWorkbench. 
-6) 4) Luego entramos al contenedor y ejecutamos `php artisan migrate` para generar una clave.
+6) 4) Luego entramos al contenedor y ejecutamos `php artisan migrate` para generar una clave. Luego ejecutar `chmod -R 777 storage` para dar permisos.
 
 ## Crear una migración:
 En el contenedor ejecutar:
