@@ -1,39 +1,3 @@
-<p align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.hospitalveterinariglories.com%2Fperro-salchicha%2F&psig=AOvVaw3IXdFCpyS4G_cnaS5agkJN&ust=1684517623449000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCMCLyaaz__4CFQAAAAAdAAAAABAE" width="400" alt="Perro salchicha"></p>
-
-<p align="center">
-Guía de instalación pila laravel + mysql con docker compose.
-</p>
-
-## Requerimientos
-
-Es necesario tener instalado: 
-`docker` https://docs.docker.com/engine/install/
-`docker-compose` https://docs.docker.com/compose/install/
-`composer` https://getcomposer.org/
-`GIT`https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-en tu computadora.
-
-## Paso a paso
-1) Clonar el repositorio en una carpeta local.
-2) Abrir los archivos, clonar el archivo .env.example a un archivo llamado .env y modificar las credeniales de base de datos. Agregar las siguientes lineas
-`WWWUSER=1000
-WWWGROUP=1000`
-Y modificar la que dice `DB_HOST=127.0.0.1` a `DB_HOST=mysql`
-En caso de usar windows, en el archivo docker_compose.yml modificar la línea 20 para que quede así: `IGNITION_LOCAL_SITES_PATH: './vendor/laravel/sail/runtimes/8.2'`
-3) En la terminal, pararse en la carpeta del proyecto y ejecutar `composer install`, luego `docker-compose up` (la primera vez tarda), este útlimo comando se ejecuta cada vez que querramos prender el contenedor.
-4) Luego entramos al contenedor y ejecutamos `php artisan key:generate` para generar una clave.
-5) Para ver la base de datos nos conectamos con las credenciales puestas anteriormente desde MySQLWorkbench. 
-6) 4) Luego entramos al contenedor y ejecutamos `php artisan migrate` para generar una clave. Luego ejecutar `chmod -R 777 storage` para dar permisos.
-
-## Crear una migración:
-En el contenedor ejecutar:
-`php artisan make:migration nombre`
-Luego:
-`php artisan migrate`
-## Como entrar a la base de datos LOCAL:
-Para esto es necesario instalar `MySQL Workbench` https://www.mysql.com/products/workbench/
-Allí, creamos una nueva conexión a `localhost` en el puerto `3306`, con un esquema default `bravo_app` y las credenciales puestas. 
-
 ## ENGLISH
 
 ## Requirements
@@ -87,3 +51,41 @@ To access the local database, you need to install [MySQL Workbench](https://www.
    - Default Schema: bravo_app
 
 Replace `<username>` and `<password>` with the appropriate database credentials.
+    
+## Español
+
+<p align="center">
+Guía de instalación pila laravel + mysql con docker compose.
+</p>
+
+## Requerimientos
+
+Es necesario tener instalado: 
+`docker` https://docs.docker.com/engine/install/
+`docker-compose` https://docs.docker.com/compose/install/
+`composer` https://getcomposer.org/
+`GIT`https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+en tu computadora.
+
+## Paso a paso
+1) Clonar el repositorio en una carpeta local.
+2) Abrir los archivos, clonar el archivo .env.example a un archivo llamado .env y modificar las credeniales de base de datos. Agregar las siguientes lineas
+`WWWUSER=1000
+WWWGROUP=1000`
+Y modificar la que dice `DB_HOST=127.0.0.1` a `DB_HOST=mysql`
+En caso de usar windows, en el archivo docker_compose.yml modificar la línea 20 para que quede así: `IGNITION_LOCAL_SITES_PATH: './vendor/laravel/sail/runtimes/8.2'`
+3) En la terminal, pararse en la carpeta del proyecto y ejecutar `composer install`, luego `docker-compose up` (la primera vez tarda), este útlimo comando se ejecuta cada vez que querramos prender el contenedor.
+4) Luego entramos al contenedor y ejecutamos `php artisan key:generate` para generar una clave.
+5) Para ver la base de datos nos conectamos con las credenciales puestas anteriormente desde MySQLWorkbench. 
+6) 4) Luego entramos al contenedor y ejecutamos `php artisan migrate` para generar una clave. Luego ejecutar `chmod -R 777 storage` para dar permisos.
+
+## Crear una migración:
+En el contenedor ejecutar:
+`php artisan make:migration nombre`
+Luego:
+`php artisan migrate`
+## Como entrar a la base de datos LOCAL:
+Para esto es necesario instalar `MySQL Workbench` https://www.mysql.com/products/workbench/
+Allí, creamos una nueva conexión a `localhost` en el puerto `3306`, con un esquema default `bravo_app` y las credenciales puestas. 
+
+
