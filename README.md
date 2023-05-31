@@ -15,7 +15,7 @@ en tu computadora.
 
 ## Paso a paso
 1) Clonar el repositorio en una carpeta local.
-2) Abrir los archivos, clonar el archivo .env.example a un archivo llamado .env y modificar las credeniales de base de datos proporcionadas por Gaspar. Agregar las siguientes lineas
+2) Abrir los archivos, clonar el archivo .env.example a un archivo llamado .env y modificar las credeniales de base de datos. Agregar las siguientes lineas
 `WWWUSER=1000
 WWWGROUP=1000`
 Y modificar la que dice `DB_HOST=127.0.0.1` a `DB_HOST=mysql`
@@ -30,3 +30,6 @@ En el contenedor ejecutar:
 `php artisan make:migration nombre`
 Luego:
 `php artisan migrate`
+## Como entrar a la base de datos LOCAL:
+Para esto es necesario instalar `MySQL Workbench` https://www.mysql.com/products/workbench/
+Allí, creamos una nueva conexión a `localhost` en el puerto `3306`, con un esquema default `bravo_app` y las credenciales puestas. 
